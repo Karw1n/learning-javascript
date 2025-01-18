@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+   
+  </head>
+
+  <body>
+    <p>Rock Paper Scissors</p>
+
+    
+    <button onclick="
+      if (computerChoice === 'Scissors') {
+        alert(`Computer picked ${computerChoice}.\nYou win!`);
+      } else if (computerChoice === 'Rock') {
+        
+        alert(`Computer picked ${computerChoice}.\nDraw!`);
+      } else {
+        alert(`Computer picked ${computerChoice}.\nYou lose!`);
+      }
+    ">Rock</button>
+
+    <button onclick="
+      if (computerChoice === 'Scissors') {
+        alert(`Computer picked ${computerChoice}.\nYou lose!`);
+      } else if (computerChoice === 'Rock') {
+        alert(`Computer picked ${computerChoice}.\nYou win!`);
+      } else {
+        alert(`Computer picked ${computerChoice}.\nDraw!`);
+      }
+    ">Paper</button>
+    
+    <button onclick="
+      if (computerChoice === 'Scissors') {
+        alert(`Computer picked ${computerChoice}.\nDraw!`);
+      } else if (computerChoice === 'Rock') {
+        alert(`Computer picked ${computerChoice}.\nYou lose!`);
+      } else {
+        alert(`Computer picked ${computerChoice}.\You win!`);
+      }
+    ">Scissors</button>
+    
+    <p></p>
+    <script>
+      const randomNumber = Math.random();
+      let computerChoice;
+      if (randomNumber <= 0.3) {
+        computerChoice = 'Rock';
+      } else if (randomNumber > 0.3 && randomNumber < 0.6) {
+        computerChoice = 'Paper';
+      } else {
+        computerChoice = 'Scissors';
+      }
+
+      console.log(computerChoice);
+
+      
+    </script>
+  </body>
+</html>
