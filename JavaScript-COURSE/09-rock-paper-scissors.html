@@ -7,25 +7,13 @@
 
   <body>
     <h1>Rock Paper Scissors</h1>
-    <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Rock', pickComputerMove())}\n
-      Total Score: 
-      Wins: ${score.wins}, 
-      Losses: ${score.losses}, 
-      Ties: ${score.ties}`);
-    ">Rock</button>
+    <button onclick="displayRound('Rock')">Rock</button>
 
-    <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Paper', pickComputerMove())}\n
-      Total Score: 
-      Wins: ${score.wins}, 
-      Losses: ${score.losses}, 
-      Ties: ${score.ties}`);
-    ">Paper</button>
+    <button onclick="displayRound('Paper')">Paper</button>
     
-    <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Scissors', pickComputerMove())}`);
-    ">Scissors</button>
+    <button onclick="displayRound('Scissors')">Scissors</button>
+
+    <p class="js-displayRound"></p>
 
 
     <p class="js-score"></p>
@@ -42,6 +30,7 @@
         };
       } 
 
+
       document.querySelector('.js-score').innerHTML = `Total Score: 
       Wins: ${score.wins}, 
       Losses: ${score.losses}, 
@@ -52,7 +41,17 @@
           score.losses = 0;
           score.ties = 0;
           localStorage.setItem('score', JSON.stringify(score));
-        }
+          document.querySelector('.js-score').innerHTML = `Total Score: 
+          Wins: ${score.wins}, 
+          Losses: ${score.losses}, 
+          Ties: ${score.ties}`;
+          
+      }
+
+      function displayRound(playerChoice) {
+        let computerChoice = pickComputerMove();
+        document.querySelector('.js-displayRound').innerHTML = `Player picked: ${playerChoice}. Computer picked: ${computerChoice}. ${checkWinner(playerChoice, computerChoice)}`;
+      }
 
 
       function pickComputerMove() {
