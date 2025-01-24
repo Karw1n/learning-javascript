@@ -8,7 +8,7 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Scissors', pickComputerMove())}\n
+      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Rock', pickComputerMove())}\n
       Total Score: 
       Wins: ${score.wins}, 
       Losses: ${score.losses}, 
@@ -16,7 +16,7 @@
     ">Rock</button>
 
     <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Scissors', pickComputerMove())}\n
+      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Paper', pickComputerMove())}\n
       Total Score: 
       Wins: ${score.wins}, 
       Losses: ${score.losses}, 
@@ -24,11 +24,7 @@
     ">Paper</button>
     
     <button onclick="
-      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Scissors', pickComputerMove())}\n
-      Total Score: 
-      Wins: ${score.wins}, 
-      Losses: ${score.losses}, 
-      Ties: ${score.ties}`);
+      alert(`Computer picked ${pickComputerMove()}.\n${checkWinner('Scissors', pickComputerMove())}`);
     ">Scissors</button>
 
 
